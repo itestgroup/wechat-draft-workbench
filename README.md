@@ -1,10 +1,10 @@
-# WeChat Draft Workbench（准备中的早期预览版）
+# WeChat Draft Workbench v0.1.0-preview
 
 单维护者使用的微信公众号 Markdown 内容工作台：创作、人工审阅、保存，再明确确认同步到微信草稿箱。最终发表由维护者在公众号端完成。
 
-这份代码仍在准备发布，尚未完成独立部署复现和完整秘密审查，不是正式发行版。LabVIEW 伯乐是原使用场景，部分界面和水印仍保留该名称。
+这是MIT开源的早期预览版，已完成当前候选的秘密扫描及构建检查，但尚未完成独立账号部署复现；不是稳定生产版。LabVIEW 伯乐是原使用场景，部分界面和水印仍保留该名称。
 
-实际Linux Python3.10构建、哈希锁定安装、许可归档及本轮OSV查询已通过，见[依赖核查](DEPENDENCY_AUDIT.md)。仍需完成独立账号部署复现，不把一次检查作为长期安全保证。仓库目前保持私有筹备状态。
+实际Linux Python3.10构建、哈希锁定安装、许可归档及本轮OSV查询已通过，见[依赖核查](DEPENDENCY_AUDIT.md)。仍需完成独立账号部署复现，不把一次检查作为长期安全保证。当前发布为v0.1.0-preview。
 
 ## 能做什么
 
@@ -18,7 +18,7 @@
 
 ## 先在本地使用
 
-安装Python3.10和Git。当前私有仓库需要已有访问权限；本地预览无需云资源或微信凭据：
+安装Python3.10和Git。本地预览无需云资源或微信凭据：
 
 ```powershell
 git clone https://github.com/itestgroup/wechat-draft-workbench.git

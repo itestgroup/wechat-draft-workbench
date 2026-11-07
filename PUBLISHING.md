@@ -1,6 +1,6 @@
 # 首次发布与持续更新
 
-仓库名称wechat-draft-workbench，代码MIT。2026-11-07已在itestgroup名下建立独立私有筹备仓库，尚未公开。不得直接公开LabVIEW-Jobs或推送其私有分支历史。
+仓库名称wechat-draft-workbench，代码MIT。2026-11-07在itestgroup名下以全新历史建立仓库，经维护者授权公开并发布v0.1.0-preview。不得直接公开LabVIEW-Jobs或推送其私有分支历史。
 
 ## 首次发布
 

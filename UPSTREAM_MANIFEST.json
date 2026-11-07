@@ -1,12 +1,12 @@
 {
   "source_commit": "5dcf7a81a42473ffda1efa6deef8b8aa7c9c0505",
-  "release_status": "REVIEW_ONLY_NOT_APPROVED",
+  "release_status": "PREVIEW_RELEASE",
   "exporter_sha256": "a0ea3e184d4821f9d5d9937d3f318514a7cd8be5cda7ac033ffe4c518fa07d13",
   "history_included": false,
   "files": {
     ".github/workflows/check.yml": "9b85f6ffdd6be87981ccb145eae887b477a41fbad8418594bb1675debd3d66b9",
     ".gitignore": "703f84ac2f56ff1f6c800cc8390df3ca00b746893e1e443167e508bcad22d793",
-    "CHANGELOG.md": "a0bf2dcccb6eeb187821e4f08cab1fc80b198cf1408b2338bb43776c8ebf086b",
+    "CHANGELOG.md": "226650fd3989c3a6b2992016740ea8da03435b67388fe4fad84aaab1a77c12ca",
     "CHATGPT_PLUGIN.md": "5d67c35f4f716279e71d6c84289ba65d7d6b5174f7ed3b5b5a20c6c4b4095f21",
     "CONTRIBUTING.md": "a42c4b4543cd17a116e72acb4ca605fa6cd5b8ec8d778f206bb7b1db91722ba9",
     "DEPENDENCY_AUDIT.md": "434b88c9ab624231adc27db296432fcf3bcf8de9a0084ba4073b4d85147e1eee",
@@ -14,8 +14,8 @@
     "FIRST_DEPLOY_CHECKLIST.md": "72180d10b2b670b39ca953da46224cde927b0432b410e8741979d34ededd71e0",
     "LICENSE": "c0d19df8046d0b9995377c8b7d3f01f94e3c9092e7bd2d8a239c37aa40572bb1",
     "MAINTENANCE.md": "193af47eac63b759fe26a885c2b096ce8b280f134f2f368d6dced8ec328d0749",
-    "PUBLISHING.md": "9095330a795487019982e738bcfc71d04c920ebabefad1488ce679dd7cc7c39a",
-    "README.md": "dc8ad617e006786f65c2e1d28cde428102bac1236640a669674eb149dabc60c3",
+    "PUBLISHING.md": "047438c1ab0eb7cf2eb6356d1d837a773113c9e7bc5e0aff5b5ec74ad0bb3f7b",
+    "README.md": "c76adace83ba9ccde79682cb5f2e934d3197c743650752959e6fef2f5078e27d",
     "SECURITY.md": "b95eadef09e6230ea970ff22bf039e75e1755e75bd7e396a85a7b9b347f5aebf",
     "SYNC_RUNBOOK.md": "f6703d3cc6a2f21946d3ad8c9da252d8eb8523f90a96d12e10d9a98b71872be7",
     "THIRD_PARTY.md": "623e054d4578eef60cf47f96874129ed7e6e3031ff191e477ba0e4bb44331480",
@@ -82,5 +82,6 @@
     "tools/check_manifest.py": "fa917b9297c9c2daaa96d0d72228db9ab8afbcbde30387486519bb1362c2f6b9",
     "wechat_client.py": "028ef8086f90234a028b673a913233b4dda1623689a1f622df168df7985da1ff",
     "wechat_draft_probe.py": "3018767f4d5b5c388f77bb321c9a5b0e0089c05bb030bf3fc4acac391934b479"
-  }
+  },
+  "release_tag": "v0.1.0-preview"
 }
