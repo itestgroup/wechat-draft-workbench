@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "statement": [
+    {
+      "effect": "allow",
+      "action": ["cos:GetBucket", "cos:GetBucketVersioning"],
+      "resource": ["qcs::cos:ap-guangzhou:uid/YOUR_TENCENT_APP_ID:YOUR_COS_BUCKET/*"]
+    },
+    {
+      "effect": "allow",
+      "action": ["cos:GetObject", "cos:PutObject"],
+      "resource": ["qcs::cos:ap-guangzhou:uid/YOUR_TENCENT_APP_ID:YOUR_COS_BUCKET/labview/*"]
+    }
+  ]
+}

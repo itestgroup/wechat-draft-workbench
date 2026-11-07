@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "tencentcloud-sdk-python-scf==3.1.100",
+    "tencentcloud-sdk-python-common==3.1.203"
+  ],
+  "source_commit": "83bb3ce37bd53e1639ec6a294f056ea7a3fd4bb4",
+  "source_url": "https://github.com/TencentCloud/tencentcloud-sdk-python/blob/83bb3ce37bd53e1639ec6a294f056ea7a3fd4bb4/LICENSE",
+  "path": "third_party/licenses/tencentcloud-sdk-python/LICENSE",
+  "sha256": "009c8843a98fcd3a6c167ea2d1c1ba38f55d849f3997f99f768391ec9e039d1c",
+  "scope": "Upstream LICENSE supplement; not claimed to be present in the original wheels."
+}

@@ -1,0 +1,11 @@
+__pycache__/
+.local/
+.build/
+dist/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+wechat_probe_*.json
+wechat_probe_*.tmp

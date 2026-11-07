@@ -1,0 +1,192 @@
+{
+  "target": "manylinux2014_x86_64 / CPython3.10",
+  "packages": [
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "artifact": "certifi-2026.10.23-py3-none-any.whl",
+      "sha256": "e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1",
+      "requirements": [],
+      "license_files": [
+        {
+          "path": "third_party/licenses/certifi/00-LICENSE",
+          "source_path": "certifi-2026.10.23.dist-info/licenses/LICENSE",
+          "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7"
+        }
+      ]
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "artifact": "charset_normalizer-3.5.2-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+      "sha256": "8a893cc101149f80a653f82062ebc95b34525a2614382e1da5458fe7c6997249",
+      "requirements": [],
+      "license_files": [
+        {
+          "path": "third_party/licenses/charset-normalizer/00-LICENSE",
+          "source_path": "charset_normalizer-3.5.2.dist-info/licenses/LICENSE",
+          "sha256": "6d0d41bfe170ac6c7dc248c9a63e254d0fb45a60d50a8257d0af92c6e249b887"
+        }
+      ]
+    },
+    {
+      "name": "cos-python-sdk-v5",
+      "version": "1.9.44",
+      "artifact": "cos_python_sdk_v5-1.9.44-py3-none-any.whl",
+      "sha256": "584a97ecd5e9b15b04a1e511e6dd0ea4eca00ee87fe50aa9a3c91ce716149bcb",
+      "requirements": [
+        "requests>=2.8",
+        "xmltodict",
+        "six",
+        "crcmod",
+        "pycryptodome"
+      ],
+      "license_files": [
+        {
+          "path": "third_party/licenses/cos-python-sdk-v5/00-LICENSE",
+          "source_path": "cos_python_sdk_v5-1.9.44.dist-info/licenses/LICENSE",
+          "sha256": "373d1e73b0f80a58213dfae1868e2c75cdb3ff33a14cd36123ce63cb1d42c3c1"
+        }
+      ]
+    },
+    {
+      "name": "crcmod",
+      "version": "1.7",
+      "artifact": "crcmod-1.7.tar.gz",
+      "sha256": "dc7051a0db5f2bd48665a990d3ec1cc305a466a77358ca4492826f41f283601e",
+      "requirements": [],
+      "license_files": [
+        {
+          "path": "third_party/licenses/crcmod/00-LICENSE",
+          "source_path": "crcmod-1.7/LICENSE",
+          "sha256": "89480768826f408daea1f3caff0509c2cc9606e10f6bb0ccfd12a3d604842c35"
+        }
+      ]
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "artifact": "idna-3.20-py3-none-any.whl",
+      "sha256": "ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c",
+      "requirements": [
+        "ruff >= 0.16.0 ; extra == \"all\"",
+        "mypy >= 1.11.2 ; extra == \"all\"",
+        "ty >= 0.0.37 ; extra == \"all\"",
+        "pytest >= 8.3.2 ; extra == \"all\"",
+        "hypothesis >= 6.141.1 ; extra == \"all\"",
+        "coverage >= 7.10.0 ; extra == \"all\""
+      ],
+      "license_files": [
+        {
+          "path": "third_party/licenses/idna/00-LICENSE.md",
+          "source_path": "idna-3.20.dist-info/licenses/LICENSE.md",
+          "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04"
+        }
+      ]
+    },
+    {
+      "name": "pycryptodome",
+      "version": "4.3.0",
+      "artifact": "pycryptodome-4.3.0-cp39-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+      "sha256": "96bf142ef25544a221a2b4a8f5d449cb07c1736be71b4ea057749318a2cd402c",
+      "requirements": [
+        "pytest; extra == \"test\"",
+        "pycryptodome-test-vectors; extra == \"test\""
+      ],
+      "license_files": [
+        {
+          "path": "third_party/licenses/pycryptodome/00-LICENSE.rst",
+          "source_path": "pycryptodome-4.3.0.dist-info/licenses/LICENSE.rst",
+          "sha256": "a260ad1a6f7137cfc79d371529818ec279a27a97bd86e02ebbf1900a23087955"
+        },
+        {
+          "path": "third_party/licenses/pycryptodome/01-LICENSE",
+          "source_path": "pycryptodome-4.3.0.dist-info/licenses/src/mldsa-native/LICENSE",
+          "sha256": "22f7173776d0a36d3f13ec1f45d51e0502e67d17e384bddf39690d833974ff93"
+        },
+        {
+          "path": "third_party/licenses/pycryptodome/02-LICENSE",
+          "source_path": "pycryptodome-4.3.0.dist-info/licenses/src/mlkem-native/LICENSE",
+          "sha256": "1c730e3c2cd4f70e058519ef3e910d8bdd4ed822ae2ce689f3c63d32fc52314b"
+        }
+      ]
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "artifact": "requests-2.34.2-py3-none-any.whl",
+      "sha256": "2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0",
+      "requirements": [
+        "charset_normalizer<4,>=2",
+        "idna<4,>=2.5",
+        "urllib3<3,>=1.26",
+        "certifi>=2023.5.7",
+        "PySocks!=1.5.7,>=1.5.6; extra == \"socks\"",
+        "chardet<8,>=3.0.2; extra == \"use-chardet-on-py3\""
+      ],
+      "license_files": [
+        {
+          "path": "third_party/licenses/requests/00-LICENSE",
+          "source_path": "requests-2.34.2.dist-info/licenses/LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+        },
+        {
+          "path": "third_party/licenses/requests/01-NOTICE",
+          "source_path": "requests-2.34.2.dist-info/licenses/NOTICE",
+          "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+        }
+      ]
+    },
+    {
+      "name": "six",
+      "version": "1.17.0",
+      "artifact": "six-1.17.0-py2.py3-none-any.whl",
+      "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+      "requirements": [],
+      "license_files": [
+        {
+          "path": "third_party/licenses/six/00-LICENSE",
+          "source_path": "six-1.17.0.dist-info/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        }
+      ]
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "artifact": "urllib3-2.8.0-py3-none-any.whl",
+      "sha256": "0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3",
+      "requirements": [
+        "brotli>=1.2.0; (platform_python_implementation == 'CPython') and extra == 'brotli'",
+        "brotlicffi>=1.2.0.0; (platform_python_implementation != 'CPython') and extra == 'brotli'",
+        "h2<5,>=4; extra == 'h2'",
+        "pysocks!=1.5.7,<2.0,>=1.5.6; extra == 'socks'",
+        "backports-zstd>=1.0.0; (python_version < '3.14') and extra == 'zstd'"
+      ],
+      "license_files": [
+        {
+          "path": "third_party/licenses/urllib3/00-LICENSE.txt",
+          "source_path": "urllib3-2.8.0.dist-info/licenses/LICENSE.txt",
+          "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686"
+        }
+      ]
+    },
+    {
+      "name": "xmltodict",
+      "version": "1.0.4",
+      "artifact": "xmltodict-1.0.4-py3-none-any.whl",
+      "sha256": "a4a00d300b0e1c59fc2bfccb53d7b2e88c32f200df138a0dd2229f842497026a",
+      "requirements": [
+        "pytest; extra == \"test\"",
+        "pytest-cov; extra == \"test\""
+      ],
+      "license_files": [
+        {
+          "path": "third_party/licenses/xmltodict/00-LICENSE",
+          "source_path": "xmltodict-1.0.4.dist-info/licenses/LICENSE",
+          "sha256": "d66d5eb8f83a0ba21d3dd04318b8817588e8764daabea852d1035e3f07ffda55"
+        }
+      ]
+    }
+  ]
+}

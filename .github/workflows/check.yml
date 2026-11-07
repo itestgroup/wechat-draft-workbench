@@ -1,0 +1,100 @@
+name: Verify open-source candidate
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-package-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build locked runtime in manylinux Python 3.10
+        run: |
+          python scripts/fetch_chatgpt_oauth.py
+          docker run --rm -v "$PWD:/work" -w /work quay.io/pypa/manylinux2014_x86_64 \
+            /bin/bash -euc '
+              PY=/opt/python/cp310-cp310/bin/python
+              "$PY" -m pip install --no-compile --target .build/scf-runtime --require-hashes -r scripts/requirements-runtime.lock
+              cp LICENSE .build/scf-runtime/LICENSE
+              cp -a third_party .build/scf-runtime/third_party
+              PYTHONPATH=/work/.build/scf-runtime "$PY" -c "import Crypto, crcmod, qcloud_cos; print(\"Native dependencies imported on Linux Python3.10\")"
+            '
+      - name: Verify final deployment ZIP offline (no deployment)
+        run: |
+          python build_scf_probe.py
+          python scripts/check_scf_package.py
+          python - <<'PY'
+          import hashlib,json,zipfile
+          from pathlib import Path
+          with zipfile.ZipFile('dist/scf-probe.zip') as z:
+            assert z.read('LICENSE') == Path('LICENSE').read_bytes()
+            provenance=json.loads(Path('third_party/runtime-artifacts.json').read_text())
+            for package in provenance['packages']:
+              for f in package['license_files']:
+                assert hashlib.sha256(z.read(f['path'])).hexdigest()==f['sha256']
+          print('Project and runtime third-party license bytes verified in final ZIP.')
+          PY
+      - name: Test with built runtime dependencies
+        env:
+          PYTHONPATH: .build/scf-runtime
+        run: |
+          python -m unittest discover -p 'test_*.py' -v
+          node --test test_frontend.mjs
+          node scripts/build_pages.mjs
+      - name: Save installed metadata and check dependency constraints
+        run: |
+          mkdir -p review
+          python - <<'PY'
+          import importlib.metadata as m,json
+          from pathlib import Path
+          packages=[{'name':d.metadata['Name'],'version':d.version,'requirements':d.requires or []} for d in m.distributions(path=['.build/scf-runtime'])]
+          Path('review/linux-runtime.json').write_text(json.dumps(packages,indent=2))
+          print('Runtime package names and versions only:')
+          for d in packages: print(d['name']+'=='+d['version'])
+          PY
+          python -m venv .build/check-env
+          cp -a .build/scf-runtime/. .build/check-env/lib/python3.10/site-packages/
+          .build/check-env/bin/python -m pip check
+      - name: Query public package versions against OSV
+        run: |
+          python - <<'PY'
+          import json,urllib.request
+          from pathlib import Path
+          packages=json.loads(Path('review/linux-runtime.json').read_text()); findings=[]
+          for p in packages:
+            data=json.dumps({'package':{'name':p['name'],'ecosystem':'PyPI'},'version':p['version']}).encode()
+            req=urllib.request.Request('https://api.osv.dev/v1/query',data=data,headers={'Content-Type':'application/json'})
+            with urllib.request.urlopen(req,timeout=30) as r: result=json.load(r)
+            if result.get('next_page_token'): raise RuntimeError('Audit pagination requires follow-up')
+            for v in result.get('vulns',[]):
+              if not v.get('withdrawn'): findings.append({'package':p['name'],'version':p['version'],'id':v['id'],'aliases':v.get('aliases',[])})
+          Path('review/osv-findings.json').write_text(json.dumps(findings,indent=2))
+          print('Unwithdrawn database records (aliases may duplicate):',len(findings))
+          if findings: raise SystemExit('Dependency security gate failed; no deployment performed')
+          PY
+      - name: Provide checked deployment package and static web files
+        uses: actions/upload-artifact@v4
+        with:
+          name: checked-workbench-packages
+          path: |
+            dist/scf-probe.zip
+            dist/scf-probe-manifest.json
+            dist/web/
+          retention-days: 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: candidate-dependency-review
+          path: review/
+          retention-days: 3
