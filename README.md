@@ -4,7 +4,7 @@
 
 这份代码仍在准备发布，尚未完成独立部署复现和完整秘密审查，不是正式发行版。LabVIEW 伯乐是原使用场景，部分界面和水印仍保留该名称。
 
-实际Linux Python3.10构建、依赖一致性及本轮OSV查询已通过，见[依赖核查](DEPENDENCY_AUDIT.md)。仍需完成独立部署复现、锁定清单与分发许可核查，不把一次检查作为长期安全保证。
+实际Linux Python3.10构建、哈希锁定安装、许可归档及本轮OSV查询已通过，见[依赖核查](DEPENDENCY_AUDIT.md)。仍需完成独立账号部署复现，不把一次检查作为长期安全保证。仓库目前保持私有筹备状态。
 
 ## 能做什么
 
@@ -18,9 +18,11 @@
 
 ## 先在本地使用
 
-安装 Python 3.10，在仓库根目录执行：
+安装Python3.10和Git。当前私有仓库需要已有访问权限；本地预览无需云资源或微信凭据：
 
 ```powershell
+git clone https://github.com/itestgroup/wechat-draft-workbench.git
+cd wechat-draft-workbench
 python platform_preview.py
 ```
 
@@ -39,6 +41,8 @@ node scripts/build_pages.mjs
 Node.js 使用22或更高版本。模拟测试不需要生产凭据，不能替代真实云端权限及微信验收。云端运行包仍需兼容 Linux Python 3.10 的依赖。
 
 云端部署见 [DEPLOYMENT.md](DEPLOYMENT.md)，更新与踩坑记录见 [MAINTENANCE.md](MAINTENANCE.md)。
+
+ChatGPT接入请继续阅读[插件部署教程](CHATGPT_PLUGIN.md)：包含MCP端点、OAuth/CIMD、授权、五项工具验收、可选创作技能和目录刷新问题。工作台部署不会自动创建或授权ChatGPT插件。
 
 首次操作按[FIRST_DEPLOY_CHECKLIST.md](FIRST_DEPLOY_CHECKLIST.md)逐项验收；维护者发布与跨仓库更新规则见[PUBLISHING.md](PUBLISHING.md)。
 

@@ -7,7 +7,7 @@
 
 Python3 COS wheel实际依赖为requests>=2.8、xmltodict、six、crcmod、pycryptodome。此前PyPI汇总元数据中的requests/certifi旧版上限已被目标wheel检查和真实构建否定，不能据此限制构建。
 
-部分传递依赖声明：certifi为MPL-2.0、requests为Apache-2.0、idna为BSD-3-Clause、pycryptodome涉及多个许可。发布运行包需保留各许可文件，不能统一替换为项目MIT。部署SDK及common wheel未找到独立许可文件，需核对上游许可文件。
+部分传递依赖声明：certifi为MPL-2.0、requests为Apache-2.0、idna为BSD-3-Clause、pycryptodome涉及多个许可。发布运行包需保留各许可文件，不能统一替换为项目MIT。部署SDK及common wheel未找到独立许可文件，已按下文归档其官方上游补充许可。
 
 部署SDK的补充许可已从其元数据指向的腾讯云官方仓库固定提交83bb3ce37bd53e1639ec6a294f056ea7a3fd4bb4归档：third_party/licenses/tencentcloud-sdk-python/LICENSE。来源与哈希见third_party/deploy-license.json。它是上游Apache-2.0许可补充，不声称原wheel自带该文件，也不将部署SDK加入运行包。自动构建会将项目及归档许可放入最终ZIP并验证原文字节。
 

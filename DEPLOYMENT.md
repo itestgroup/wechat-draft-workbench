@@ -19,6 +19,8 @@
 
 ## 环境变量
 
+工作台部署完成后，ChatGPT插件请单独按[CHATGPT_PLUGIN.md](CHATGPT_PLUGIN.md)配置与验收；本页第8步只是入口，不替代插件部署教程。
+
 | 变量 | 是否秘密 | 配置要求 |
 | --- | --- | --- |
 | WECHAT_APP_ID / WECHAT_APP_SECRET | 凭据，均不公开 | SCF 后台配置，不写入源码或前端 |
