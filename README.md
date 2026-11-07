@@ -4,7 +4,7 @@
 
 这份代码仍在准备发布，尚未完成独立部署复现和完整秘密审查，不是正式发行版。LabVIEW 伯乐是原使用场景，部分界面和水印仍保留该名称。
 
-实际Linux Python3.10构建、依赖一致性及本轮OSV查询已通过，见[依赖核查](DEPENDENCY_AUDIT.md)。仍需完成独立部署复现、锁定清单与分发许可核查，不把一次检查作为长期安全保证。
+实际Linux Python3.10构建、哈希锁定安装、许可归档及本轮OSV查询已通过，见[依赖核查](DEPENDENCY_AUDIT.md)。仍需完成独立账号部署复现，不把一次检查作为长期安全保证。仓库目前保持私有筹备状态。
 
 ## 能做什么
 
@@ -18,9 +18,11 @@
 
 ## 先在本地使用
 
-安装 Python 3.10，在仓库根目录执行：
+安装Python3.10和Git。当前私有仓库需要已有访问权限；本地预览无需云资源或微信凭据：
 
 ```powershell
+git clone https://github.com/itestgroup/wechat-draft-workbench.git
+cd wechat-draft-workbench
 python platform_preview.py
 ```
 

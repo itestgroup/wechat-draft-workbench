@@ -20,7 +20,10 @@ jobs:
         with:
           node-version: '22'
       - name: Build locked runtime in manylinux Python 3.10
+        # Verify checkout bytes before network downloads and build outputs exist.
+        # This step intentionally does not read any environment credentials.
         run: |
+          python tools/check_manifest.py
           python scripts/fetch_chatgpt_oauth.py
           docker run --rm -v "$PWD:/work" -w /work quay.io/pypa/manylinux2014_x86_64 \
             /bin/bash -euc '
